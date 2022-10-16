@@ -2,15 +2,55 @@
 <RevitAddIns>
 	<AddIn Type="Command">
 		<Name>MyRevitCommands</Name>
-		<Assembly>MyRevitCommands.dll</Assembly>
+		<Assembly>revit-api-csharp.dll</Assembly>
 		<AddInId>
 			913AAA3D-677F-4043-BC94-6F395F1265D9
 		</AddInId>
-		<FullClassName>MyRevitCommands.GetElementId</FullClassName>
+		<FullClassName>revit_api_csharp.GetElementId</FullClassName>
 		<Text>GetElementId</Text>
 		<Description>Get the Id from an element</Description>
 		<VendorId>Ian</VendorId>
 		<VendorDescription>Cubo Engenharia</VendorDescription>
 		<VisibilityMode>NotVisibleWhenNoActiveDocument</VisibilityMode>
 	</AddIn>
+	<AddIn Type="Command">
+		<Name>MyRevitCommands</Name>
+		<Assembly>revit-api-csharp.dll</Assembly>
+		<AddInId>
+			2B0949E9-E64D-4D60-A3E0-F28E1BD6161F
+		</AddInId>
+		<FullClassName>revit_api_csharp.CollectWindows</FullClassName>
+		<Text>CollectWindows</Text>
+		<Description>Get the windows from the document</Description>
+		<VendorId>Ian</VendorId>
+		<VendorDescription>Cubo Engenharia</VendorDescription>
+		<VisibilityMode>NotVisibleWhenNoActiveDocument</VisibilityMode>
+	</AddIn>
+	<AddIn Type="Command">
+		<Name>MyRevitCommands</Name>
+		<Assembly>revit-api-csharp.dll</Assembly>
+		<AddInId>
+			2BB54F08-7DF1-4569-BEBF-E54BD1263B98
+		</AddInId>
+		<FullClassName>revit_api_csharp.DeleteElement</FullClassName>
+		<Text>DeleteElement</Text>
+		<Description>Delet element from the document</Description>
+		<VendorId>Ian</VendorId>
+		<VendorDescription>Cubo Engenharia</VendorDescription>
+		<VisibilityMode>NotVisibleWhenNoActiveDocument</VisibilityMode>
+	</AddIn>
+	<AddIn Type="Command">
+		<Name>MyRevitCommands</Name>
+		<Assembly>revit-api-csharp.dll</Assembly>
+		<AddInId>
+			EA22D81A-19BA-4F88-83D1-A3F9647B1620
+		</AddInId>
+		<FullClassName>revit_api_csharp.PlaceFamily</FullClassName>
+		<Text>PlaceFamily</Text>
+		<Description>Place the family in the origin</Description>
+		<VendorId>Ian</VendorId>
+		<VendorDescription>Cubo Engenharia</VendorDescription>
+		<VisibilityMode>NotVisibleWhenNoActiveDocument</VisibilityMode>
+	</AddIn>
 </RevitAddIns>
+
