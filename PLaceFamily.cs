@@ -22,17 +22,24 @@ namespace revit_api_csharp
 
             //get filtered
             FilteredElementCollector collector = new FilteredElementCollector(doc);
-            IList<Element> symbols = collector.OfClass(typeof(FamilySymbol)).WhereElementIsElementType().ToElements();
+            FamilySymbol symbol = collector.OfClass(typeof(FamilySymbol))
+                .WhereElementIsElementType()
+                .Cast<FamilySymbol>()
+                .First(x => x.Name == "1525 x 762mm");
 
+             /*
+              other way to filter collector
             FamilySymbol symbol = null;
             foreach (Element ele in symbols)
             {
-                if(ele.Name == "1525 x 762mm")
+                if()
                 {
                     symbol = ele as FamilySymbol;
                     break;
                 }
             }
+
+                */
 
             try
             {

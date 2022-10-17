@@ -52,5 +52,18 @@
 		<VendorDescription>Cubo Engenharia</VendorDescription>
 		<VisibilityMode>NotVisibleWhenNoActiveDocument</VisibilityMode>
 	</AddIn>
+	<AddIn Type="Command">
+		<Name>MyRevitCommands</Name>
+		<Assembly>revit-api-csharp.dll</Assembly>
+		<AddInId>
+			F0396B7D-AFEF-4BD6-9BE2-22A9A383C3AC
+		</AddInId>
+		<FullClassName>revit_api_csharp.CreateWall</FullClassName>
+		<Text>CreateWall</Text>
+		<Description>Create wall in active document</Description>
+		<VendorId>0001</VendorId>
+		<VendorDescription>Ian Mota - Cubo Engenharia</VendorDescription>
+		<VisibilityMode>NotVisibleWhenNoActiveDocument</VisibilityMode>
+	</AddIn>
 </RevitAddIns>
 
