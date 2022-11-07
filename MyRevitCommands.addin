@@ -58,9 +58,22 @@
 		<AddInId>
 			F0396B7D-AFEF-4BD6-9BE2-22A9A383C3AC
 		</AddInId>
-		<FullClassName>revit_api_csharp.CreateWall</FullClassName>
-		<Text>CreateWall</Text>
+		<FullClassName>revit_api_csharp.PlaceLineElement</FullClassName>
+		<Text>PlaceLineElement</Text>
 		<Description>Create wall in active document</Description>
+		<VendorId>0001</VendorId>
+		<VendorDescription>Ian Mota - Cubo Engenharia</VendorDescription>
+		<VisibilityMode>NotVisibleWhenNoActiveDocument</VisibilityMode>
+	</AddIn>
+	<AddIn Type="Command">
+		<Name>MyRevitCommands</Name>
+		<Assembly>revit-api-csharp.dll</Assembly>
+		<AddInId>
+			F1E223B4-5316-4AE2-8F02-357FDBF05B45
+		</AddInId>
+		<FullClassName>revit_api_csharp.PlaceLoopElement</FullClassName>
+		<Text>PlaceLoopElement</Text>
+		<Description>Create a floor in active document</Description>
 		<VendorId>0001</VendorId>
 		<VendorDescription>Ian Mota - Cubo Engenharia</VendorDescription>
 		<VisibilityMode>NotVisibleWhenNoActiveDocument</VisibilityMode>

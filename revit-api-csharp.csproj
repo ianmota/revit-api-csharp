@@ -52,7 +52,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CreateWall.cs" />
+    <Compile Include="GroupOrganization.cs" />
+    <Compile Include="PlaceLoopElement.cs" />
+    <Compile Include="PlaceLineElement.cs" />
     <Compile Include="PlaceFamily.cs" />
     <Compile Include="DeleteElement.cs" />
     <Compile Include="CollectWindows.cs" />

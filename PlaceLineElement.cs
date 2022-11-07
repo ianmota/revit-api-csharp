@@ -10,7 +10,7 @@ using Autodesk.Revit.DB;
 namespace revit_api_csharp
 {
     [Transaction(TransactionMode.Manual)]
-    public class CreateWall : IExternalCommand
+    public class PlaceLineElement : IExternalCommand
     {
         public Result Execute(ExternalCommandData commandData, ref string message, ElementSet elements)
         {
