@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
 <RevitAddIns>
+	
 	<AddIn Type="Command">
 		<Name>MyRevitCommands</Name>
 		<Assembly>revit-api-csharp.dll</Assembly>
@@ -13,6 +14,7 @@
 		<VendorDescription>Cubo Engenharia</VendorDescription>
 		<VisibilityMode>NotVisibleWhenNoActiveDocument</VisibilityMode>
 	</AddIn>
+	
 	<AddIn Type="Command">
 		<Name>MyRevitCommands</Name>
 		<Assembly>revit-api-csharp.dll</Assembly>
@@ -26,6 +28,7 @@
 		<VendorDescription>Cubo Engenharia</VendorDescription>
 		<VisibilityMode>NotVisibleWhenNoActiveDocument</VisibilityMode>
 	</AddIn>
+	
 	<AddIn Type="Command">
 		<Name>MyRevitCommands</Name>
 		<Assembly>revit-api-csharp.dll</Assembly>
@@ -39,6 +42,7 @@
 		<VendorDescription>Cubo Engenharia</VendorDescription>
 		<VisibilityMode>NotVisibleWhenNoActiveDocument</VisibilityMode>
 	</AddIn>
+	
 	<AddIn Type="Command">
 		<Name>MyRevitCommands</Name>
 		<Assembly>revit-api-csharp.dll</Assembly>
@@ -52,6 +56,7 @@
 		<VendorDescription>Cubo Engenharia</VendorDescription>
 		<VisibilityMode>NotVisibleWhenNoActiveDocument</VisibilityMode>
 	</AddIn>
+	
 	<AddIn Type="Command">
 		<Name>MyRevitCommands</Name>
 		<Assembly>revit-api-csharp.dll</Assembly>
@@ -65,6 +70,7 @@
 		<VendorDescription>Ian Mota - Cubo Engenharia</VendorDescription>
 		<VisibilityMode>NotVisibleWhenNoActiveDocument</VisibilityMode>
 	</AddIn>
+	
 	<AddIn Type="Command">
 		<Name>MyRevitCommands</Name>
 		<Assembly>revit-api-csharp.dll</Assembly>
@@ -78,5 +84,20 @@
 		<VendorDescription>Ian Mota - Cubo Engenharia</VendorDescription>
 		<VisibilityMode>NotVisibleWhenNoActiveDocument</VisibilityMode>
 	</AddIn>
+
+	<AddIn Type="Command">
+		<Name>MyRevitCommands</Name>
+		<Assembly>revit-api-csharp.dll</Assembly>
+		<AddInId>
+			4B87FB66-F7E0-46AB-B7B8-D24D57656349
+		</AddInId>
+		<FullClassName>revit_api_csharp.GroupOrganization</FullClassName>
+		<Text>GroupCount</Text>
+		<Description>Count the number of groups</Description>
+		<VendorId>0001</VendorId>
+		<VendorDescription>Ian Mota - Cubo Engenharia</VendorDescription>
+		<VisibilityMode>NotVisibleWhenNoActiveDocument</VisibilityMode>
+	</AddIn>
+	
 </RevitAddIns>
 
