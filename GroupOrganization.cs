@@ -7,7 +7,7 @@ using Autodesk.Revit.DB;
 using Autodesk.Revit.Attributes;
 using Autodesk.Revit.UI;
 using Autodesk.Revit.UI.Selection;
-
+using System.Xml.Schema;
 
 namespace revit_api_csharp
 {
@@ -51,6 +51,7 @@ namespace revit_api_csharp
                 }
             }
 
+            //Ordenate groups by flat or upright
             IList<Group> grpsHorizontal = new List<Group>();
             IList<Group> grpsVertical = new List<Group>();
 
@@ -71,12 +72,13 @@ namespace revit_api_csharp
                 }
             }
 
-            //Horizontal manipulations
+            //Flat manipulations
             IList<XYZ> hPoints = new List<XYZ>();
             IList<LocationPoint> hLocations = new List<LocationPoint>();
 
             foreach (Group grp in grpsHorizontal)
             {
+                //Take the groups points and groups locations
                 LocationPoint hLocation = grp.Location as LocationPoint;
                 hPoints.Add(hLocation.Point);
                 hLocations.Add(grp.Location as LocationPoint);
@@ -91,7 +93,6 @@ namespace revit_api_csharp
                     yTotal -= 1;
                 }
             }
-            TaskDialog.Show("Grupos no Modelo", String.Format("Ponto {0}", yTotal.ToString()));
 
             int hCont = 0;
             int nGroup = 1;
@@ -153,47 +154,46 @@ namespace revit_api_csharp
                 hCont += 1;
             }
 
-            //Vertical manipulations
+            //Upright manipulations
             List<XYZ> vPoints = new List<XYZ>();
             IList<LocationPoint> vLocations = new List<LocationPoint>();
 
             foreach (Group grp in grpsVertical)
             {
+                //take all groups points and groups locations
                 LocationPoint vLocation = grp.Location as LocationPoint;
                 vPoints.Add(vLocation.Point);
                 vLocations.Add(grp.Location as LocationPoint);
             }
 
-            int xTotal = vPoints.Count;
-            foreach (XYZ pointX in vPoints)
+            List<string> pointsX = new List<string>();
+            foreach (XYZ _p in vPoints)
             {
-                IList<XYZ> Var = vPoints.FindAll(x => pointX.X == );
-                
-                if (Var.Count > 1)
-                {
-                    xTotal -= 1;
-                }
+                pointsX.Add(_p.X.ToString("F"));
             }
 
-            TaskDialog.Show("Grupos no Modelo", String.Format("Ponto {0}", xTotal.ToString()));
+            HashSet<string> pXWithoutDuplicates = new HashSet<string>(pointsX); //remove duplicates
+            int xTotal = pXWithoutDuplicates.Count; //total upright groups
+            
             int vCont = 0;
-
             while (vCont < xTotal)
             {
-                IList<double> pointsX = new List<double>();
+                
+                IList<double> points = new List<double>();
                 foreach (XYZ point in vPoints)
                 {
-                    pointsX.Add(point.X);
+                    points.Add(point.X);
                 }
-                double xMin = pointsX.Min();
+                double xMin = points.Min();
 
-                List<XYZ> linePoints = vPoints.Where(x => x.X == xMin).ToList();
+                List<XYZ> linePoints = vPoints
+                    .Where(x => x.X.ToString("F") == xMin.ToString("F"))
+                    .OrderByDescending(p => p.Y)
+                    .ToList();
 
-                for (int i = linePoints.Count - 1; i >= 0; i--)
+                foreach(XYZ linepoint in linePoints)
                 {
-                    vPoints.Remove(linePoints[i]);
-                    
-                    /*
+                    vPoints.Remove(linepoint);
                     foreach (Group grp in grpsVertical)
                     {
                         LocationPoint lPoint = grp.Location as LocationPoint;
@@ -228,11 +228,12 @@ namespace revit_api_csharp
                             break;
                         }
 
-                    }*/
-                }
-                vCont += 1;
+                    }
+                    
+        }
+                    
+        vCont += 1;
             }
-
             TaskDialog.Show("Grupos no Modelo", "Os grupos foram renomeados com sucesso!");
 
             return Result.Succeeded;
